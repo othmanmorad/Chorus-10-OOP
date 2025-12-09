@@ -1,0 +1,95 @@
+// copy constructer
+
+
+class clsAdress
+{
+private:
+    string _Adress1Line;
+    string _Adress2Line;
+    string _ZipCode;
+    string _poPox;
+
+public:
+    clsAdress(string Adress1Line, string Adress2Line, string ZipCode, string PoPox)
+    {
+        _Adress1Line = Adress1Line;
+        _Adress2Line = Adress2Line;
+        _ZipCode = ZipCode;
+        _poPox = PoPox;
+    }
+
+    clsAdress(clsAdress &Old_Opj)
+    {
+        _Adress1Line = Old_Opj.Adress1Line();
+        _Adress2Line = Old_Opj. Adress2Line();
+        _ZipCode = Old_Opj.ZipCode();
+        _poPox = Old_Opj.PoPox();
+    }
+
+    
+    void SetAdress1Line(string Adress1Line)
+    {
+        _Adress1Line = Adress1Line;
+    }
+
+    string Adress1Line()
+    {
+        return _Adress1Line;
+    }
+
+
+
+
+    void SetAdress2Line(string Adress2Line)
+    {
+        _Adress2Line = Adress2Line;
+    }
+
+    string Adress2Line()
+    {
+        return _Adress2Line;
+    }
+
+
+
+    void SetZipCode(string ZipCode)
+    {
+        _ZipCode = ZipCode;
+    }
+
+    string ZipCode()
+    {
+        return _ZipCode;
+    }
+
+
+    void SetPoPox(string PoPox)
+    {
+        _poPox = PoPox;
+    }
+
+    string PoPox()
+    {
+        return _poPox;
+    }
+
+    void Print()
+    {
+        cout << "Address 1 " << _Adress1Line << "\n";
+        cout << "Address 2 " << _Adress2Line << "\n";
+        cout << "Zip Code " << _ZipCode << "\n";
+        cout << "PoPox " << _poPox << "\n";
+    }
+};
+
+int main()
+{
+
+    clsAdress Adress1("Nablus", "Enaboos", "1234", "4444");
+
+    Adress1.Print();
+
+    clsAdress Adress2 = Adress1;
+    Adress2.Print();
+    system("pause");
+}

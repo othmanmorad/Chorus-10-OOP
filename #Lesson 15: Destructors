@@ -1,0 +1,37 @@
+//Destructor
+
+class clsPerson
+{
+
+public:
+    clsPerson()
+    {
+        cout << "Othman\n";
+        cout << "hi ,I'm a constructor";
+
+    }
+    ~clsPerson()
+    {
+        cout << "\nhi ,I'm a Destructor";
+    }
+
+   
+};
+void Fun1()
+{
+    clsPerson();
+}
+
+void Fun2()
+{
+    clsPerson*Person2=new clsPerson;
+    delete Person2;
+}
+
+
+int main()
+{
+    Fun1();
+    Fun2();
+}
+

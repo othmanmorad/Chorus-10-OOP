@@ -1,0 +1,128 @@
+class clsA
+{
+private:
+    int var1;
+    void Fun1()
+    {
+        cout << "Function 1\n";
+    }
+
+protected:
+    int var2;
+    void Fun2()
+    {
+        cout << "Function 2\n";
+    }
+
+public:
+    int var3 = 5;
+    void Fun3()
+    {
+        cout << "Function 3\n";
+    }
+};
+
+
+class clsB :private clsA
+{
+public:
+    int Fun4()
+    {
+        clsA::Fun2();
+        clsA::var2;
+
+        clsA::Fun3();
+        clsA::var3;
+        return 4;
+    }
+};
+
+class clsC :public clsB
+{
+public:
+    int Fun5()
+    {
+        clsB::Fun4();
+
+        clsB B;
+        B.Fun4();
+
+        return 5;
+    }
+};
+
+class clsD :protected clsA
+{
+public:
+    int Fun6()
+    {
+        clsA::Fun2();
+        clsA::var2;
+
+        clsA::Fun3();
+        clsA::var3;
+        return 6;
+    }
+};
+
+class clsE :protected clsD
+{
+public:
+    int Fun7()
+    {
+        clsD::Fun2();
+        clsD::var2;
+        clsD::Fun3();
+        clsD::var3;
+
+        clsD::Fun6();
+        return 7;
+    }
+   
+
+};
+
+class clsF :public clsE
+{
+public:
+    int Fun8()
+    {
+        clsE::Fun2();
+        clsE::var2;
+        clsE::Fun3();
+        clsE::var3;
+
+        clsE::Fun6();
+        clsE::Fun7();
+
+        return 8;
+    }
+
+
+};
+
+
+int main()
+{
+   
+    clsA A1;
+    A1.Fun3();
+    A1.var3;
+
+    clsB B1;
+    B1.Fun4();
+
+    clsC C1;
+    C1.Fun4();
+    C1.Fun5();
+
+    clsD D1;
+    D1.Fun6();
+
+    clsE E1;
+    E1.Fun7();
+
+    clsF F1;
+    F1.Fun7();
+    F1.Fun8();
+}

@@ -1,0 +1,49 @@
+//lesson24 access Modifiers
+
+
+class clsA
+{
+    private:
+        int var1;
+        void Fun1()
+        {
+            cout << "Function 1\n";
+        }
+
+protected:
+    int var2;
+    void Fun2()
+    {
+        cout << "Function 2\n";
+    }
+
+public:
+    int var3=5;
+    void Fun3()
+    {
+        cout << "Function 3\n";
+    }
+};
+
+
+class clsB :public clsA
+{
+public:
+    void Fun4()
+    {
+        clsA::Fun2();
+        cout << "Function 4\n";
+    }
+};
+
+int main()
+{
+    clsA A;
+    A.Fun3();
+    A.var3;
+
+    clsB B;
+    B.Fun3();
+    B.Fun4();
+    B.var3;
+}

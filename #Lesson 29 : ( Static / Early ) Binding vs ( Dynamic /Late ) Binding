@@ -1,0 +1,49 @@
+ //Lesson 29
+class clsPerson
+{
+public:
+    virtual  void Print()
+    {
+        cout << "Hi, I am a person\n";
+    }
+};
+
+class clsEmployee :public clsPerson
+{
+public:
+    void Print()
+    {
+        cout << "Hi, I am an employee\n";
+    }
+};
+
+
+class clsStudent :public clsPerson
+{
+public:
+    void Print()
+    {
+        cout << "Hi, I am a student\n";
+    }
+};
+
+int main()
+{
+    clsEmployee Employee;
+    clsStudent Student;
+
+    //Early - Static binding at compilation time
+    Employee.Print();
+    Student.Print();
+
+
+
+    //up casting
+
+    //Late - Daynamic binding at run time
+    clsPerson* Person1 = &Employee;
+    Person1->Print();
+
+    clsPerson* Person2 = &Student;
+    Person2->Print();
+}

@@ -1,0 +1,32 @@
+ //lesson 27
+
+class clsPerson
+{
+public:
+
+    string FullName = "Raed Murad Haj-Mohammed";
+   
+};
+
+class clsEmployee : public clsPerson
+{
+    string Title = "CEO";
+};
+
+
+int main()
+{
+    clsEmployee Empoloyee1;
+
+   cout<< Empoloyee1.FullName << endl;
+
+
+   //up casting 
+
+   clsPerson* Person = &Empoloyee1;
+   cout<<Person->FullName<<endl;
+
+   //down casting erorr
+  /// clsEmployee* Employee = &Person;
+
+}

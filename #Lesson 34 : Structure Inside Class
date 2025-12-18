@@ -1,0 +1,53 @@
+//lesson 34
+class clsPerson 
+{
+    struct stAddress
+    {
+        string AddressLine1;
+        string AddressLine2;
+        string city;
+        string Country;
+    };
+
+public:
+    stAddress Address;
+    string FullName;
+
+    clsPerson()
+    {
+        FullName = "Raed Murad Haj-Mohammed";
+        Address.AddressLine1 = "Enaboos";
+        Address.AddressLine2 = "Al sabel mosuqe";
+        Address.city = "Nablus";
+        Address.Country = "Palestine";
+    }
+
+    void SetCity(string city)
+    {
+        Address.city = city;
+    }
+    string GetCity()
+    {
+        return Address.city;
+    }
+
+    void PrintAddress()
+    {
+        cout << "Full Name : " << FullName << endl;
+        cout << "Address Line1 : " <<Address.AddressLine1<< endl;
+        cout << "Address Line2 : " <<Address.AddressLine2 << endl;
+        cout << "City : " <<Address.city<< endl;
+        cout << "Country : " <<Address.Country<< endl;
+    }
+};
+
+int main()
+{
+    clsPerson Person;
+    Person.PrintAddress();
+
+
+    Person.SetCity("Palestine");
+    cout << "\n" << Person.GetCity();
+
+}

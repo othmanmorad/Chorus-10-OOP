@@ -1,0 +1,117 @@
+//lesson 35
+
+class clsPerson
+{
+    string _FullName;
+public:
+    class clsAddress
+    {
+    private:
+        string _AddressLine1;
+        string _AddressLine2;
+        string _City;
+        string _Country;
+
+    public:
+        clsAddress(string AddressLine1, string AddressLine2, string City, string Country)
+        {
+            _AddressLine1 = AddressLine1;
+            _AddressLine2 = AddressLine2;
+            _City = City;
+            _Country = Country;
+        }
+
+        void SetAddressLine1(string AddressLine1)
+        {
+            _AddressLine1 = AddressLine1;
+        }
+
+        string AddressLine1()
+        {
+            return _AddressLine1;
+        }
+
+        void SetAddressLine2(string AddressLine2)
+        {
+            _AddressLine2 = AddressLine2;
+        }
+
+        string AddressLine2()
+        {
+            return _AddressLine2;
+        }
+
+
+
+        void SetCity(string City)
+        {
+            _City = City;
+        }
+
+        string City()
+        {
+            return _City;
+        }
+
+
+        void SetCountry(string Country)
+        {
+            _Country = Country;
+        }
+
+        string Country()
+        {
+            return _Country;
+        }
+
+        void Print() 
+        {
+            cout << "Address \n";
+            cout <<_AddressLine1<<endl;
+            cout <<_AddressLine2<<endl;
+            cout <<_City <<endl;
+            cout <<_Country<<endl ;
+        }
+    };
+
+public:
+    void SetFullName(string FullName)
+    {
+        _FullName = FullName;
+    }
+
+    string FullName()
+    {
+        return _FullName;
+    }
+
+    clsAddress Address=clsAddress("","","","");
+
+    clsPerson(string FullName,string AddressLine1, string AddressLine2, string City, string Country)
+    {
+        _FullName = FullName;
+       
+        Address = clsAddress(AddressLine1, AddressLine2, City, Country);
+    }
+    void PrintInfo()
+    {
+        cout << "\nInfo\n";
+        cout << "\nFull Name : " << _FullName << endl;
+        cout << "\nAddress Line1 : " << Address.AddressLine1() << endl;
+        cout << "\nAddress Line2 : " << Address.AddressLine2() << endl;
+        cout << "\nCity : " << Address.City() << endl;
+        cout << "\nCountry : " << Address.Country() << endl;
+    }
+
+
+};
+
+int main()
+{
+    clsPerson Person1("Raed Haj-Mohammed", "Enaboos", "Al Sabel Mosuqe", "Nablus", "Palestine");
+
+
+    Person1.Address.Print();
+    Person1.PrintInfo();
+
+}

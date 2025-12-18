@@ -1,0 +1,64 @@
+//lesson 31
+
+class clsMopile
+{
+public:
+    virtual void Dial(string PhoneNumber)=0;
+    virtual void SensSMS(string PhoneNumber,string Text) = 0;
+    virtual void TakePicture() = 0;
+
+};
+
+class clsiPhone :public clsMopile
+{
+public:
+    void Dial(string PhoneNumber)
+    {
+    };
+    void SensSMS(string PhoneNumber, string Text)
+    {
+
+
+    };
+    
+    void TakePicture()
+
+    {
+
+    };
+
+
+};
+
+class clsSamsung :public clsMopile
+{
+public:
+    void Dial(string PhoneNumber)
+    {
+    };
+    void SensSMS(string PhoneNumber, string Text)
+    {
+
+
+    };
+
+    void TakePicture()
+
+    {
+
+    };
+
+
+    void Print()
+    {
+        cout << "Hi!!";
+    }
+
+};
+
+int main()
+{
+    clsiPhone iPhone;
+    clsSamsung Samsung;
+}
+

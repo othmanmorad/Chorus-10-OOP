@@ -1,0 +1,36 @@
+ //lesson 33
+
+class clsA
+{
+private:
+
+    int _Var1;
+
+protected:
+    int  _Var2;
+public:
+    int Var3;
+
+    clsA()
+    {
+        _Var1 = 10;
+        _Var2 = 20;
+        Var3 = 30;
+
+    }
+    friend int MySum(clsA A);
+};
+
+int MySum(clsA A1)
+{
+    return  A1.Var3 + A1._Var2 + A1._Var1;
+}
+
+int main()
+{
+    clsA A1;
+    cout << A1.Var3 << endl;
+
+   cout<< MySum(A1);
+}
+

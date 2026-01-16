@@ -1,0 +1,40 @@
+//Lesson 37
+
+class clsEmployee
+{
+public :
+    int ID;
+    string Name;
+    float Salary;
+
+    clsEmployee(int ID, string Name, float Salary)
+    {
+       this->ID = ID;
+        this->Name = Name;
+        this->Salary = Salary;
+    }
+
+    void Print()
+    {
+        cout << ID << " " << Name << " " << Salary << endl;
+    }
+
+    static void Func1(clsEmployee Employee)
+    {
+        Employee.Print();
+    }
+    void Func2()
+    {
+        Func1(*this);
+    }
+};
+
+int main()
+{
+    clsEmployee Employee(1234,"Othman",50000);
+
+    Employee.Print();
+    
+    Employee.Func2();
+
+}

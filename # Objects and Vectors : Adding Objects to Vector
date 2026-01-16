@@ -1,0 +1,41 @@
+//lesson 40
+class clsA
+{
+public:
+    int x;
+    clsA(){} //dummy costracter
+
+
+    clsA(int Value)
+    {
+        x = Value;
+    }
+
+    void print()
+    {
+        cout << "The Value of x = " << x << endl;
+    }
+};
+
+int main()
+{
+
+    short NumberOfOpject = 5;
+
+    clsA* Arr = new clsA[NumberOfOpject];
+
+    for (short i = 0; i < NumberOfOpject; i++)
+    {
+        Arr[i] = clsA(i);
+    }
+
+    for (short i = 0; i < NumberOfOpject; i++)
+    {
+        Arr[i].print();
+    }
+
+    delete[]Arr;
+
+    system("pause");
+    return 0;
+}

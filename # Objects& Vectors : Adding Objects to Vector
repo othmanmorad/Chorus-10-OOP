@@ -1,0 +1,44 @@
+//lesson 39
+
+/*
+class clsA
+{
+public:
+    int x;
+    clsA(int Value)
+    {
+        x = Value;
+    }
+
+    void print()
+    {
+        cout << "The Value of x = " << x << endl;
+    }
+};
+
+int main()
+{
+    vector<clsA>V1;
+
+    short NumberOfOpject = 5;
+
+    for (short i = 0; i < NumberOfOpject; i++)
+    {
+        V1.push_back(clsA(i));
+    }
+
+    for (short i = 0; i < NumberOfOpject; i++)
+    {
+        V1[i].print();
+    }
+
+    cout << "\n===============================" << endl;
+    for (clsA &A:V1)
+    {
+       A.print();
+    }
+
+    system("pause");
+    return 0;
+}
+*/
